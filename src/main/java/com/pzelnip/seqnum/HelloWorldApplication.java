@@ -3,7 +3,9 @@ package com.pzelnip.seqnum;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+
 import com.pzelnip.seqnum.resources.HelloWorldResource;
+import com.pzelnip.seqnum.resources.SeqNumResource;
 import com.pzelnip.seqnum.health.TemplateHealthCheck;
 
 public class HelloWorldApplication extends Application<HelloWorldConfiguration> {
@@ -13,7 +15,7 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
 
 	@Override
 	public String getName() {
-		return "hello-world";
+		return "seqnum";
 	}
 
 	@Override
@@ -30,6 +32,7 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
 				configuration.getTemplate());
 		environment.healthChecks().register("template", healthCheck);
 		environment.jersey().register(resource);
+		environment.jersey().register(new SeqNumResource(5));
 	}
 
 }
