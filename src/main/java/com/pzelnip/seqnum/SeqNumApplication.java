@@ -8,9 +8,9 @@ import com.pzelnip.seqnum.resources.HelloWorldResource;
 import com.pzelnip.seqnum.resources.SeqNumResource;
 import com.pzelnip.seqnum.health.TemplateHealthCheck;
 
-public class HelloWorldApplication extends Application<HelloWorldConfiguration> {
+public class SeqNumApplication extends Application<HelloWorldConfiguration> {
 	public static void main(String[] args) throws Exception {
-		new HelloWorldApplication().run(args);
+		new SeqNumApplication().run(args);
 	}
 
 	@Override
