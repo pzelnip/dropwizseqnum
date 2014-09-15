@@ -8,7 +8,7 @@ import com.pzelnip.seqnum.resources.HelloWorldResource;
 import com.pzelnip.seqnum.resources.SeqNumResource;
 import com.pzelnip.seqnum.health.TemplateHealthCheck;
 
-public class SeqNumApplication extends Application<HelloWorldConfiguration> {
+public class SeqNumApplication extends Application<SeqNumConfiguration> {
 	public static void main(String[] args) throws Exception {
 		new SeqNumApplication().run(args);
 	}
@@ -19,12 +19,12 @@ public class SeqNumApplication extends Application<HelloWorldConfiguration> {
 	}
 
 	@Override
-	public void initialize(Bootstrap<HelloWorldConfiguration> bootstrap) {
+	public void initialize(Bootstrap<SeqNumConfiguration> bootstrap) {
 		// nothing to do yet
 	}
 
 	@Override
-	public void run(HelloWorldConfiguration configuration,
+	public void run(SeqNumConfiguration configuration,
 			Environment environment) {
 		final HelloWorldResource resource = new HelloWorldResource(
 				configuration.getTemplate(), configuration.getDefaultName());
