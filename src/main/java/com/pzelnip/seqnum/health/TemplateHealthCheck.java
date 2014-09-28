@@ -18,3 +18,8 @@ public class TemplateHealthCheck extends HealthCheck {
         return Result.healthy();
     }
 }
+
+
+/*
+Health check to see if last seq num returned was persisted
+*/
